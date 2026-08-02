@@ -1,11 +1,4 @@
- function bookvalidator(
-  booksRecord,
-  id,
-  title,
-  isbn,
-  totalcopies,
-  availablecopies,
-) {
+ export function bookvalidator(booksRecord, id, title, isbn, totalcopies, availablecopies,) {
   let truth = true;
   for (let i = 0; i < booksRecord.length; i++) {
     if (booksRecord[i].id === id) {
@@ -29,10 +22,10 @@
   }
   if (truth) console.log("validation successful!");
 }
-//console.log(booksRecord);
 
-//bookvalidator(booksRecord, 0, "rd", 876466478, 2, 0);
- function membervalidator(memberRecord, id, email){
+
+
+ export function membervalidator(memberRecord, id, email){
   let truth=true;
   for(let i=0; i < memberRecord.length; i++){
     if(memberRecord[i].id==id){
@@ -61,6 +54,3 @@
     console.log("Verification Successful!");
 
 }
-
-import { memberRecord } from '../data/members.js';
-membervalidator(memberRecord, 7, "netsi73@gmail.com");
