@@ -101,6 +101,24 @@ export function searchBook(choice, id, title, author, category){
             }
         }
         break;
+
+        case "category":
+            for (let i=0; i<booksRecord.length; i++){
+                if(category==booksRecord[i].category){
+                let {
+                id,
+                title,
+                author,
+                category,
+                publicationyear,
+                isbn,
+                totalcopies,
+                availablecopies,
+                } = booksRecord[i];
+                console.log(`id:${id}, Title:${title}, author:${author}, category:${category}, publicationyear:${publicationyear}, isbn:${isbn}, totalcopies:${totalcopies}, availablecopies:${availablecopies}`,);
+            }
+        }
+        break;
     
     }
 }
