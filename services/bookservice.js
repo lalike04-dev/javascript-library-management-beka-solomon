@@ -26,3 +26,17 @@ export function addBook(
 
 /* addBook(1, "tit", "henesey", "fiction", 2015, 123445645, 2, 0);
 console.log(booksRecord); */
+export function viewallbooks(){
+    let id;
+    let title;
+    let author;
+    let category;
+    let publicationyear;
+    let isbn;
+    let totalcopies;
+    let availablecopies;
+    for(let i=0; i< booksRecord.length; i++){
+        {id,title,author,category,publicationyear,isbn,totalcopies,availablecopies,}=booksRecord[i];
+        console.log(`id:${id}, Title:${title}, author:${author}, category:${category}, publicationyear:${publicationyear}, isbn:${isbn}, totalcopies:${totalcopies}, availablecopies:${availablecopies}`);
+    }
+}
