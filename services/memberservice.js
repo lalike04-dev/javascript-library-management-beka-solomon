@@ -86,4 +86,23 @@ export function searchMember(choice, id, firstname) {
       console.log("Error, incompatable input...try again!");
   }
 }
-searchMember("id", 9, "Melu");
+//searchMember("id", 9, "Melu");
+
+export function updateMember(id, firstname, lastname, email, phone) {
+  
+      let truth = true;
+      for (let i = 0; i < memberRecord.length; i++) {
+        if (id == memberRecord[i].id) {
+          truth = true;
+            memberRecord[i].firstname=firstname;
+            memberRecord[i].lastname=lastname;
+            memberRecord[i].email=email;
+            memberRecord[i].phone=phone;
+            console.log("Updated Succesfully!");
+          break;
+        }
+        truth = false;
+      }
+      if (!truth) console.log("Member doesnt exist");
+    }
+updateMember(9,"feta","belu","feta@gmail.com",null);
