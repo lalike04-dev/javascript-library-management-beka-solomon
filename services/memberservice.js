@@ -1,5 +1,5 @@
 import { memberRecord } from "../data/members.js";
-
+import { borrowRecord } from "../data/borrowed-books.js";
 export function addMember(
   id,
   firstName,
@@ -105,4 +105,22 @@ export function updateMember(id, firstname, lastname, email, phone) {
       }
       if (!truth) console.log("Member doesnt exist");
     }
-updateMember(9,"feta","belu","feta@gmail.com",null);
+//updateMember(9,"feta","belu","feta@gmail.com",null);
+
+export function deleteMember(id) {
+  let truth = true;
+  for (let i = 0; i < memberRecord.length; i++) {
+    if (id == memberRecord[i].id) {
+    for(let j=0; j<borrowRecord.length; j++){
+      if(borrowRecord[j].hasreturned){
+      memberRecord.splice(i, 1);
+      truth = true;
+      console.log("Deleted successfully");
+      break;}
+    truth = false;
+    }
+    }
+    }
+  if (!truth) console.log("Member doesnt exist!");
+}
+//deleteMember(6);
