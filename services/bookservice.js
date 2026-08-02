@@ -1,4 +1,4 @@
-//import { booksRecord } from "../data/books.js";
+import { booksRecord } from "../data/books.js";
 
 export function addBook(
   id,
@@ -144,3 +144,16 @@ export function updateBook(id, Ntitle, Nauthor, Ncategory, Npublicationyear, Nis
 }
 
 //updateBook(7, "v", "v", "v", "v", 2001, 1234567, 2,2);
+
+export function deleteBook(id) {
+      for (let i = 0; i < booksRecord.length; i++) {
+        if (id == booksRecord[i].id) {
+        booksRecord.splice(i,1);
+        
+      }
+      
+  }
+  console.log(booksRecord);
+}
+
+//deleteBook(4);
