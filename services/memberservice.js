@@ -1,5 +1,3 @@
-//import { memberRecord } from "../data/members.js";
-
 import { memberRecord } from "../data/members.js";
 
 export function addMember(
@@ -25,11 +23,11 @@ console.log(memberRecord); */
 export function viewAllMembers() {
   for (let i = 0; i < memberRecord.length; i++) {
     let {
-    id,
-    firstName,
-    lastName,
-    email,
-    phone
+    id: id,
+    firstname: firstName,
+    lastname: lastName,
+    email: email,
+    phone: phone
     } = memberRecord[i];
     console.log(
       `Member${i}->id:${id}, First name:${firstName}, last name:${lastName}, email:${email}, phone:${phone}`
@@ -37,3 +35,55 @@ export function viewAllMembers() {
   }
 }
 /* viewAllMembers(); */
+
+export function searchMember(choice, id, firstname) {
+  switch (choice.toLowerCase()) {
+    case "id":
+      let truth = true;
+      for (let i = 0; i < memberRecord.length; i++) {
+        if (id == memberRecord[i].id) {
+          truth = true;
+          let {
+            id: id,
+            firstname: firstName,
+            lastname: lastName,
+            email: email,
+            phone: phone
+            } = memberRecord[i];
+          console.log(
+            `id:${id}, fisrtName:${firstName}, lastName:${lastName}, email:${email}, phone:${phone}`
+          );
+          break;
+        }
+        truth = false;
+      }
+      if (!truth) console.log("Member doesnt exist");
+      break;
+
+    case "firstname":
+      let truth2 = true;
+      for (let i = 0; i < memberRecord.length; i++) {
+            if (firstname.toLowerCase() == memberRecord[i].firstname.toLowerCase()) {
+          truth2 = true;
+          let {
+            id: id,
+            firstname: firstName,
+            lastname: lastName,
+            email: email,
+            phone: phone
+            } = memberRecord[i];
+          console.log(
+            `id:${id}, fisrtName:${firstName}, lastName:${lastName}, email:${email}, phone:${phone}`
+          );
+          break;
+        }
+        truth2 = false;
+      }
+      if (!truth2) console.log("Member doesnt exist!");
+      break;
+
+    default:
+      console.log("Error, incompatable input...try again!");
+  }
+}
+searchMember("id", 9, "Melu");
