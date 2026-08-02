@@ -40,8 +40,15 @@
       truth=false;
       break;
     }
-    if(memberRecord[i].email==email){
+    if(email.includes("@gmail.com")){
+      if(memberRecord[i].email==email){
       console.log("Error, email already exists!");
+      truth=false;
+      break;
+      }
+    }
+    else{
+      console.log("Enter a valid email please");
       truth=false;
       break;
     }
