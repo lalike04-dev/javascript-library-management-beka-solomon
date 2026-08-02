@@ -179,20 +179,24 @@ export function updateBook(
       break;
     }
     truth = false;
-    
   }
   if (!truth) console.log("Enter a valid ID number please");
 }
 
-updateBook(6, "v", "v", "v", "v", 2001, 1234567, 2,2);
+//updateBook(6, "v", "v", "v", "v", 2001, 1234567, 2,2);
 
 export function deleteBook(id) {
+  let truth = true;
   for (let i = 0; i < booksRecord.length; i++) {
     if (id == booksRecord[i].id) {
       booksRecord.splice(i, 1);
+      truth = true;
+      console.log("Deleted successfully");
+      break;
     }
+    truth = false;
   }
-  console.log(booksRecord);
+  if (!truth) console.log("Enter a valid Id number please");
 }
 
-//deleteBook(4);
+//deleteBook(0);
