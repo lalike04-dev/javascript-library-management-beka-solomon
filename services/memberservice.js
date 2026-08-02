@@ -1,6 +1,8 @@
 //import { memberRecord } from "../data/members.js";
 
-export function addBook(
+import { memberRecord } from "../data/members.js";
+
+export function addMember(
   id,
   firstName,
   lastName,
@@ -17,5 +19,21 @@ export function addBook(
   memberRecord.push(insert);
 }
 
-/* addBook(7, "tick tack", "henesey", "fiction@gmail.com", 2015);
+/* addMember(7, "tick tack", "henesey", "fiction@gmail.com", 2015);
 console.log(memberRecord); */
+
+export function viewAllMembers() {
+  for (let i = 0; i < memberRecord.length; i++) {
+    let {
+    id,
+    firstName,
+    lastName,
+    email,
+    phone
+    } = memberRecord[i];
+    console.log(
+      `Member${i}->id:${id}, First name:${firstName}, last name:${lastName}, email:${email}, phone:${phone}`
+    );
+  }
+}
+/* viewAllMembers(); */
