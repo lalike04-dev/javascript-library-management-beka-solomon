@@ -152,7 +152,7 @@ export function searchBook(choice, id, title, author, category) {
   }
 }
 
-searchBook("category", 4, "Dune", "Fredrich ", "Scifi");
+//searchBook("category", 4, "Dune", "Fredrich ", "Scifi");
 
 export function updateBook(
   id,
@@ -164,6 +164,7 @@ export function updateBook(
   Ntotalcopies,
   Navailablecopies,
 ) {
+  let truth = true;
   for (let i = 0; i < booksRecord.length; i++) {
     if (id == booksRecord[i].id) {
       booksRecord[i].title = Ntitle;
@@ -173,12 +174,17 @@ export function updateBook(
       booksRecord[i].isbn = Nisbn;
       booksRecord[i].totalcopies = Ntotalcopies;
       booksRecord[i].availablecopies = Navailablecopies;
-      console.log(booksRecord[i]);
+      console.log("Updated succuesfully");
+      truth = true;
+      break;
     }
+    truth = false;
+    
   }
+  if (!truth) console.log("Enter a valid ID number please");
 }
 
-//updateBook(7, "v", "v", "v", "v", 2001, 1234567, 2,2);
+updateBook(6, "v", "v", "v", "v", 2001, 1234567, 2,2);
 
 export function deleteBook(id) {
   for (let i = 0; i < booksRecord.length; i++) {
