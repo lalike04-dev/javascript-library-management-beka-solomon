@@ -1,4 +1,11 @@
- export function bookvalidator(booksRecord, id, title, isbn, totalcopies, availablecopies,) {
+export function bookValidator(
+  booksRecord,
+  id,
+  title,
+  isbn,
+  totalcopies,
+  availablecopies,
+) {
   let truth = true;
   for (let i = 0; i < booksRecord.length; i++) {
     if (booksRecord[i].id === id) {
@@ -23,34 +30,31 @@
   if (truth) console.log("validation successful!");
 }
 
-
-
- export function membervalidator(memberRecord, id, email){
-  let truth=true;
-  for(let i=0; i < memberRecord.length; i++){
-    if(memberRecord[i].id==id){
+export function memberValidator(memberRecord, id, email) {
+  let truth = true;
+  for (let i = 0; i < memberRecord.length; i++) {
+    if(id!=null && isbn!=null){
+      if (memberRecord[i].id == id) {
       console.log("Error, Id already exists!");
-      truth=false;
-      break;
-    }
-    if(email.includes("@gmail.com")){
-      if(memberRecord[i].email==email){
-      console.log("Error, email already exists!");
-      truth=false;
+      truth = false;
       break;
       }
     }
-    else{
+    if (email.includes("@gmail.com")) {
+      if (memberRecord[i].email == email) {
+        console.log("Error, email already exists!");
+        truth = false;
+        break;
+      }
+    } else {
       console.log("Enter a valid email please");
-      truth=false;
+      truth = false;
       break;
     }
   }
-  if(email==null){
+  if (email == null) {
     console.log("Error, email cannot be null!");
-    truth=false;
+    truth = false;
   }
-  if(truth)
-    console.log("Verification Successful!");
-
+  if (truth) console.log("Verification Successful!");
 }
