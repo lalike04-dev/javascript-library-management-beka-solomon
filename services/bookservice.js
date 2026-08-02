@@ -1,4 +1,4 @@
-import { booksRecord } from "../data/books.js";
+//import { booksRecord } from "../data/books.js";
 
 export function addBook(
   id,
@@ -126,3 +126,21 @@ export function searchBook(choice, id, title, author, category) {
 }
 
 //searchBook("category", 6, "Dune Messiah", "Fredrich Nische", "Sci-fi");
+
+export function updateBook(id, Ntitle, Nauthor, Ncategory, Npublicationyear, Nisbn, Ntotalcopies, Navailablecopies) {
+      for (let i = 0; i < booksRecord.length; i++) {
+        if (id == booksRecord[i].id) {
+        booksRecord[i].title=Ntitle;
+        booksRecord[i].author=Nauthor;
+        booksRecord[i].category=Ncategory;
+        booksRecord[i].publicationyear=Npublicationyear;
+        booksRecord[i].isbn=Nisbn;
+        booksRecord[i].totalcopies=Ntotalcopies;
+        booksRecord[i].availablecopies=Navailablecopies;
+        console.log(booksRecord[i]);
+      }
+      
+  }
+}
+
+//updateBook(7, "v", "v", "v", "v", 2001, 1234567, 2,2);
