@@ -53,5 +53,29 @@ export function categoryinsights() {
   console.log(
     `The category with the highest borrow rate is "${categoryname.category}" with ${highestcount} borrows`,
   );
+  let array=[];
+  
+  
+  for(let i=0;i<booksRecord.length;i++){
+    for(let j=0;j<booksRecord.length;j++){
+      if(booksRecord[i].category==booksRecord[j].category){
+        if(!array.includes(booksRecord[i].category.toLowerCase())){
+          array.push(booksRecord[i].category.toLowerCase());
+        }
+      }
+    }
+    
+  }
+  for(let i=0; i<array.length;i++){
+    let count=0;
+    for(let j=0;j<booksRecord.length;j++){
+      if(array[i]==booksRecord[j].category.toLowerCase()){
+        //console.log(2)
+        count++;
+      }
+    }
+    console.log(`${array[i]}: count ${count}`);
+  }
+
 }
 categoryinsights();
