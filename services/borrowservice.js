@@ -1,6 +1,6 @@
-import { booksRecord } from "../data/books.js";
+/* import { booksRecord } from "../data/books.js";
 import { memberRecord } from "../data/members.js";
-import { borrowRecord } from "../data/borrowed-books.js";
+import { borrowRecord } from "../data/borrowed-books.js"; */
 export function borrowBook(memberid, bookid, date) {
   let truth = true;
   let truth2 = true;
