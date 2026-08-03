@@ -1,6 +1,6 @@
-import { booksRecord } from "../data/books.js";
+/* import { booksRecord } from "../data/books.js";
 import { borrowRecord } from "../data/borrowed-books.js";
-import { memberRecord } from "../data/members.js";
+import { memberRecord } from "../data/members.js"; */
 
 export function libraryAnalytics() {
   let activeborrows = borrowRecord.filter((book) => book.hasreturned == false);
@@ -46,16 +46,13 @@ export function categoryinsights() {
         }
       }
     }
-    //console.log(highestcount);
   }
-  /* console.log(highestcount) */
   let categoryname = booksRecord.find(book=> book.id==cloneid);
   console.log(
     `The category with the highest borrow rate is "${categoryname.category}" with ${highestcount} borrows`,
   );
   let array=[];
-  
-  
+
   for(let i=0;i<booksRecord.length;i++){
     for(let j=0;j<booksRecord.length;j++){
       if(booksRecord[i].category==booksRecord[j].category){
@@ -74,7 +71,7 @@ export function categoryinsights() {
         count++;
       }
     }
-    console.log(`${array[i]}: count ${count}`);
+    console.log(`${array[i]}: count ${count} books`);
   }
 
 }
