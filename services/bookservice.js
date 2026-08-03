@@ -1,4 +1,4 @@
-//import { booksRecord } from "../data/books.js";
+import { booksRecord } from "../data/books.js";
 
 export function addBook(
   id,

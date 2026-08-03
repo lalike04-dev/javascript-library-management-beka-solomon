@@ -1,5 +1,5 @@
-/* import { memberRecord } from "../data/members.js";
-import { borrowRecord } from "../data/borrowed-books.js"; */
+import { memberRecord } from "../data/members.js";
+import { borrowRecord } from "../data/borrowed-books.js";
 export function addMember(id, firstName, lastName, email, phone) {
   let insert = {
     id: id,
@@ -9,6 +9,7 @@ export function addMember(id, firstName, lastName, email, phone) {
     phone: phone,
   };
   memberRecord.push(insert);
+  console.log("Registration Succesful");
 }
 
 /* addMember(7, "tick tack", "henesey", "fiction@gmail.com", 2015);

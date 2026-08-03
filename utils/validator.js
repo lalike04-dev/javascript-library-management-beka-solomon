@@ -34,7 +34,7 @@ export function bookValidator(
 export function memberValidator( id, email) {
   let truth = true;
   for (let i = 0; i < memberRecord.length; i++) {
-    if(id!=null && isbn!=null){
+    if(id!=null){
       if (memberRecord[i].id == id) {
       console.log("Error, Id already exists!");
       truth = false;

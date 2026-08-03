@@ -1,6 +1,6 @@
-/* import { booksRecord } from "../data/books.js";
+import { booksRecord } from "../data/books.js";
 import { memberRecord } from "../data/members.js";
-import { borrowRecord } from "../data/borrowed-books.js"; */
+import { borrowRecord } from "../data/borrowed-books.js";
 export function borrowBook(memberid, bookid, date) {
   let truth = true;
   let truth2 = true;
@@ -27,7 +27,7 @@ export function borrowBook(memberid, bookid, date) {
             let check=borrowRecord.find(mem=>{
                 return mem.bookid==bookid && mem.memberid==memberid})
                 if(check!=[] && check!=undefined){
-                    console.log(2)
+                    
                     if(check.hasreturned){
                         //console.log(23)
                         borrowRecord.push({
