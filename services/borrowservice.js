@@ -58,3 +58,19 @@ export function borrowBook(memberid, bookid, date) {
     //borrowBook(3, 2, "2013-12-12");
 /* console.log(booksRecord.find(mem=> {
     return mem.id==6 && mem.availablecopies>0})) */
+
+export function returnBook(memberid, bookid){
+    let availableborrow=borrowRecord.find(borrowBook=>{
+        return borrowBook.bookid==bookid && borrowBook.memberid==memberid
+    })
+    if(availableborrow!=[] && availableborrow!=undefined){
+        if(!availableborrow.hasreturned){
+            availableborrow.hasreturned=true;
+            console.log("Book Returned Succesfully!")
+        }
+        else console.log("Book already returned!")
+    }
+    else console.log("Borrow record does not exist!")
+}
+
+//returnBook(3, 5);
