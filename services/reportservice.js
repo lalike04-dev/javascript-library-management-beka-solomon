@@ -42,37 +42,35 @@ export function categoryinsights() {
         count++;
         if (highestcount < count) {
           highestcount = count;
-          cloneid= borrowRecord[i].bookid;
+          cloneid = borrowRecord[i].bookid;
         }
       }
     }
   }
-  let categoryname = booksRecord.find(book=> book.id==cloneid);
+  let categoryname = booksRecord.find((book) => book.id == cloneid);
   console.log(
     `The category with the highest borrow rate is "${categoryname.category}" with ${highestcount} borrows`,
   );
-  let array=[];
+  let array = [];
 
-  for(let i=0;i<booksRecord.length;i++){
-    for(let j=0;j<booksRecord.length;j++){
-      if(booksRecord[i].category==booksRecord[j].category){
-        if(!array.includes(booksRecord[i].category.toLowerCase())){
+  for (let i = 0; i < booksRecord.length; i++) {
+    for (let j = 0; j < booksRecord.length; j++) {
+      if (booksRecord[i].category == booksRecord[j].category) {
+        if (!array.includes(booksRecord[i].category.toLowerCase())) {
           array.push(booksRecord[i].category.toLowerCase());
         }
       }
     }
-    
   }
-  for(let i=0; i<array.length;i++){
-    let count=0;
-    for(let j=0;j<booksRecord.length;j++){
-      if(array[i]==booksRecord[j].category.toLowerCase()){
+  for (let i = 0; i < array.length; i++) {
+    let count = 0;
+    for (let j = 0; j < booksRecord.length; j++) {
+      if (array[i] == booksRecord[j].category.toLowerCase()) {
         //console.log(2)
         count++;
       }
     }
     console.log(`${array[i]}: count ${count} books`);
   }
-
 }
-categoryinsights();
+/* categoryinsights(); */

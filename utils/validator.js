@@ -1,5 +1,6 @@
+import { memberRecord } from "../data/members.js";
+import { booksRecord } from "../data/books.js";
 export function bookValidator(
-  booksRecord,
   id,
   title,
   isbn,
@@ -30,7 +31,7 @@ export function bookValidator(
   if (truth) console.log("validation successful!");
 }
 
-export function memberValidator(memberRecord, id, email) {
+export function memberValidator( id, email) {
   let truth = true;
   for (let i = 0; i < memberRecord.length; i++) {
     if(id!=null && isbn!=null){

@@ -22,3 +22,13 @@ import {
 } from "./services/reportservice.js";
 import { bookValidator, memberValidator } from "./utils/validator.js";
 
+//Down here are our inputs that we are gona use for the operation of teh program
+let id=7;
+let title="venom"
+let author="Frank Herebert"
+let category="Fiction"
+let publicationyear=2015
+let isbn=172634267
+let totalcopies=5
+let availablecopies=2
+bookValidator(id,title,isbn,totalcopies,availablecopies);
