@@ -1,6 +1,6 @@
-/* import { booksRecord } from "../data/books.js";
+import { booksRecord } from "../data/books.js";
 import { borrowRecord } from "../data/borrowed-books.js";
-import { memberRecord } from "../data/members.js"; */
+import { memberRecord } from "../data/members.js";
 
 export function libraryAnalytics() {
   let activeborrows = borrowRecord.filter((book) => book.hasreturned == false);
