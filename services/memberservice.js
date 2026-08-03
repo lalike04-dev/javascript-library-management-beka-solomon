@@ -103,33 +103,31 @@ export function updateMember(id, firstname, lastname, email, phone) {
 //updateMember(9,"feta","belu","feta@gmail.com",null);
 
 export function deleteMember(id) {
-let i=0;
-let j=0;
-let truth=true;
-let truth2=true;
-for(;i<memberRecord.length; i++){
-    if(id==memberRecord[i].id){
-        truth=true;
-        break;
+  let i = 0;
+  let j = 0;
+  let truth = true;
+  let truth2 = true;
+  for (; i < memberRecord.length; i++) {
+    if (id == memberRecord[i].id) {
+      truth = true;
+      break;
     }
-    truth=false;
-}
+    truth = false;
+  }
 
-for(; j<borrowRecord.length; j++){
-    if(id==borrowRecord[j].memberid){
-        truth=true;
-        break;
+  for (; j < borrowRecord.length; j++) {
+    if (id == borrowRecord[j].memberid) {
+      truth = true;
+      break;
     }
-    truth=false;
-}
-if(truth && truth2){
-    if(borrowRecord[j].hasreturned){
-        memberRecord.splice(i, 1);
-        console.log("Deleted Sucessfully");
-    }
-    else console.log("Member hasnt returned the borrowed book!");
-
-}
-else console.log("Member doesnt exist or member have not borrowed a book yet");
+    truth = false;
+  }
+  if (truth && truth2) {
+    if (borrowRecord[j].hasreturned) {
+      memberRecord.splice(i, 1);
+      console.log("Deleted Sucessfully");
+    } else console.log("Member hasnt returned the borrowed book!");
+  } else
+    console.log("Member doesnt exist or member have not borrowed a book yet");
 }
 //deleteMember(2);
